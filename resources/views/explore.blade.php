@@ -4,12 +4,12 @@
 <div class="bg-white rounded-3xl shadow-sm p-8 h-full min-h-[80vh]">
     
     <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-6">
-        
-        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+        <div class="flex items-center gap-4 flex-wrap">
             <h1 class="font-bold text-3xl text-crave-teal">Explore Categories</h1>
-            
-            <a href="{{ route('addresses.index') }}" class="inline-flex items-center justify-center bg-crave-green hover:bg-crave-darkgreen text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm transform hover:-translate-y-0.5">
-                <ion-icon name="location-outline" class="mr-2 text-lg"></ion-icon> Manage Addresses
+
+            <a href="{{ auth()->check() ? route('products.index') : route('login') }}" class="inline-flex items-center gap-2 rounded-full bg-crave-lime px-5 py-3 text-sm font-bold text-crave-teal shadow-sm transition-colors hover:bg-crave-green">
+                <ion-icon name="pricetag-outline"></ion-icon>
+                Products
             </a>
         </div>
         
