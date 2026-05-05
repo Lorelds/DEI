@@ -15,10 +15,7 @@
             @endif
         </div>
         
-        <div class="relative w-full md:w-96">
-            <ion-icon name="search" class="absolute left-4 top-4 text-gray-400 text-xl"></ion-icon>
-            <input type="text" placeholder="Search for surplus food, categories, or stores..." class="w-full bg-gray-50 border border-gray-200 rounded-2xl py-4 pl-12 pr-4 outline-none text-md focus:ring-2 focus:ring-crave-lime focus:border-transparent transition-all shadow-inner">
-        </div>
+        <!-- Search removed per request: users navigate via categories -->
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
@@ -38,5 +35,40 @@
         @endforeach
 
     </div>
+
+    <!-- Recent Products -->
+    @if(isset($products) && $products->count() > 0)
+    <div class="mt-12">
+        <h2 class="text-2xl font-extrabold text-crave-teal mb-6 text-center">Recent Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            @foreach($products as $product)
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                <a href="{{ route('products.show', $product->product_ID) }}" class="block">
+                    <div class="h-40 bg-crave-beige flex items-center justify-center overflow-hidden">
+                        @if($product->image)
+                            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="w-full h-full object-cover">
+                        @else
+                            <ion-icon name="image-outline" class="text-4xl text-gray-300"></ion-icon>
+                        @endif
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-crave-teal mb-1">{{ $product->name }}</h3>
+                        <p class="text-sm text-gray-500 mb-3">{{ optional($product->category)->name }}</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-xl font-bold text-crave-darkgreen">Rp {{ number_format($product->actualPrice - $product->discount, 0, ',', '.') }}</p>
+                                @if($product->discount > 0)
+                                    <p class="text-xs text-gray-400 line-through">Rp {{ number_format($product->actualPrice, 0, ',', '.') }}</p>
+                                @endif
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-crave-lime text-crave-teal">Stock: {{ $product->stock }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </div>
+    @endif
 </div>
 @endsection
