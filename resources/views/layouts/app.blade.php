@@ -53,11 +53,7 @@
                     <ion-icon name="leaf" class="mr-2"></ion-icon> Crave
                 </a>
 
-                <!-- Desktop Menu -->
-                <!-- Desktop Menu -->
                 <nav class="hidden md:flex space-x-10 text-gray-600 font-medium text-lg">
-                    <a href="{{ route('home') }}" class="{{ request()->is('home') ? 'text-crave-darkgreen border-b-2 border-crave-lime' : 'hover:text-crave-lime' }} transition-colors pb-1">Shop</a>
-                    <a href="{{ route('explore') }}" class="{{ request()->is('explore') ? 'text-crave-darkgreen border-b-2 border-crave-lime' : 'hover:text-crave-lime' }} transition-colors pb-1">Explore</a>
                     <a href="{{ route('cart') }}" class="{{ request()->is('cart') ? 'text-crave-darkgreen border-b-2 border-crave-lime' : 'hover:text-crave-lime' }} transition-colors pb-1 flex items-center">
                     <a href="/explore" class="{{ request()->is('explore') ? 'text-crave-darkgreen border-b-2 border-crave-lime' : 'hover:text-crave-lime' }} transition-colors pb-1">Explore</a>
                     <a href="/cart" class="{{ request()->is('cart') ? 'text-crave-darkgreen border-b-2 border-crave-lime' : 'hover:text-crave-lime' }} transition-colors pb-1 flex items-center">
