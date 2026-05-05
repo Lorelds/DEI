@@ -3,7 +3,6 @@
 @section('content')
 <div class="bg-white rounded-3xl shadow-sm p-8 h-full min-h-[80vh]">
     
-    <!-- Header & Search (Side by side on Desktop) -->
     <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-6">
         <div class="flex items-center gap-4 flex-wrap">
             <h1 class="font-bold text-3xl text-crave-teal">Explore Categories</h1>
@@ -14,15 +13,13 @@
             </a>
         </div>
         
-        <!-- Search Bar -->
         <div class="relative w-full md:w-96">
             <ion-icon name="search" class="absolute left-4 top-4 text-gray-400 text-xl"></ion-icon>
             <input type="text" placeholder="Search for surplus food, categories, or stores..." class="w-full bg-gray-50 border border-gray-200 rounded-2xl py-4 pl-12 pr-4 outline-none text-md focus:ring-2 focus:ring-crave-lime focus:border-transparent transition-all shadow-inner">
         </div>
     </div>
 
-    <!-- Responsive Categories Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
         
         <a href="#" class="bg-crave-lime rounded-3xl p-8 flex flex-col items-center justify-center aspect-square shadow-sm transform hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
             <div class="h-24 w-24 mb-5 bg-white rounded-full bg-opacity-30 flex items-center justify-center text-5xl"><ion-icon name="nutrition-outline" class="text-crave-teal"></ion-icon></div>
