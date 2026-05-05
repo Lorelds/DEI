@@ -15,10 +15,7 @@
             @endif
         </div>
         
-        <div class="relative w-full md:w-96">
-            <ion-icon name="search" class="absolute left-4 top-4 text-gray-400 text-xl"></ion-icon>
-            <input type="text" placeholder="Search for surplus food, categories, or stores..." class="w-full bg-gray-50 border border-gray-200 rounded-2xl py-4 pl-12 pr-4 outline-none text-md focus:ring-2 focus:ring-crave-lime focus:border-transparent transition-all shadow-inner">
-        </div>
+        <!-- Search removed per request: users navigate via categories -->
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
