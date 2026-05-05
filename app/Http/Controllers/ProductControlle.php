@@ -11,12 +11,14 @@ class ProductController extends Controller
 {
     public function index()
     {
+        // Mengambil produk milik user yang sedang login beserta data kategorinya
         $products = Product::with('category')->where('user_id', Auth::id())->get();
         return view('products.index', compact('products'));
     }
 
     public function create()
     {
+        // Mengambil semua kategori untuk dropdown form
         $categories = Category::all();
         return view('products.create', compact('categories'));
     }
@@ -33,7 +35,7 @@ class ProductController extends Controller
         ]);
 
         Product::create([
-            'user_id' => Auth::id(),
+            'user_id' => Auth::id(), // Assign ke user yang sedang login
             'category_id' => $request->category_id,
             'name' => $request->name,
             'actualPrice' => $request->actualPrice,
@@ -42,13 +44,14 @@ class ProductController extends Controller
             'status' => $request->status,
         ]);
 
-        return redirect()->route('products.index')->with('success', 'Produk berhasil ditambahkan!');
+        return redirect()->route('products.index')->with('success', 'Product added successfully!');
     }
 
     public function show($id)
     {
         $product = Product::with('category')->findOrFail($id);
         
+        // Pastikan user tidak bisa melihat detail produk orang lain (opsional)
         if ($product->user_id !== Auth::id()) {
             abort(403, 'Unauthorized action.');
         }
@@ -77,7 +80,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->update($request->all());
 
-        return redirect()->route('products.index')->with('success', 'Produk berhasil diupdate!');
+        return redirect()->route('products.index')->with('success', 'Product updated successfully!');
     }
 
     public function destroy($id)
@@ -85,6 +88,6 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->delete();
 
-        return redirect()->route('products.index')->with('success', 'Produk berhasil dihapus!');
+        return redirect()->route('products.index')->with('success', 'Product deleted successfully!');
     }
 }

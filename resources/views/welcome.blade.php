@@ -24,8 +24,16 @@
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <a href="{{ route('explore') }}" class="bg-white text-crave-teal border-2 border-crave-teal px-10 py-4 rounded-full font-bold hover:bg-gray-50 transition-colors shadow-lg text-lg">
+                Explore Now
+            </a>
+
             @if (Route::has('login'))
                 @auth
+                    <a href="{{ route('products.index') }}" class="bg-crave-lime text-crave-teal px-10 py-4 rounded-full font-bold hover:bg-crave-green transition-colors shadow-lg text-lg">
+                        My Products
+                    </a>
+
                     <a href="{{ url('/dashboard') }}" class="bg-crave-teal text-white px-10 py-4 rounded-full font-bold hover:bg-crave-darkgreen transition-colors shadow-lg text-lg">
                         Go to Dashboard
                     </a>

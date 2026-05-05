@@ -5,7 +5,14 @@
     
     <!-- Header & Search (Side by side on Desktop) -->
     <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-6">
-        <h1 class="font-bold text-3xl text-crave-teal">Explore Categories</h1>
+        <div class="flex items-center gap-4 flex-wrap">
+            <h1 class="font-bold text-3xl text-crave-teal">Explore Categories</h1>
+
+            <a href="{{ auth()->check() ? route('products.index') : route('login') }}" class="inline-flex items-center gap-2 rounded-full bg-crave-lime px-5 py-3 text-sm font-bold text-crave-teal shadow-sm transition-colors hover:bg-crave-green">
+                <ion-icon name="pricetag-outline"></ion-icon>
+                Products
+            </a>
+        </div>
         
         <!-- Search Bar -->
         <div class="relative w-full md:w-96">
