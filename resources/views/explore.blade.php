@@ -22,37 +22,18 @@
     </div>
 
     <!-- Responsive Categories Grid -->
-    <!-- On mobile: 2 columns. On tablet: 3 columns. On laptop: 4 columns. On large desktop: 6 columns. -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
         
-        <a href="#" class="bg-crave-lime rounded-3xl p-6 flex flex-col items-center justify-center aspect-square shadow-sm transform hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
-            <div class="h-20 w-20 mb-4 bg-white rounded-full bg-opacity-30 flex items-center justify-center text-4xl"><ion-icon name="nutrition-outline" class="text-crave-teal"></ion-icon></div>
-            <span class="font-bold text-lg text-crave-teal text-center leading-tight">Fresh Fruits<br>& Vegetable</span>
+        <a href="#" class="bg-crave-lime rounded-3xl p-8 flex flex-col items-center justify-center aspect-square shadow-sm transform hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
+            <div class="h-24 w-24 mb-5 bg-white rounded-full bg-opacity-30 flex items-center justify-center text-5xl"><ion-icon name="nutrition-outline" class="text-crave-teal"></ion-icon></div>
+            <span class="font-bold text-2xl text-crave-teal text-center leading-tight">Makanan</span>
+            <p class="mt-3 text-sm text-crave-teal text-center opacity-80">Semua kategori makanan tersedia di sini</p>
         </a>
 
-        <a href="#" class="bg-crave-orange rounded-3xl p-6 flex flex-col items-center justify-center aspect-square shadow-sm transform hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
-            <div class="h-20 w-20 mb-4 bg-white rounded-full bg-opacity-30 flex items-center justify-center text-4xl"><ion-icon name="water-outline" class="text-white"></ion-icon></div>
-            <span class="font-bold text-lg text-white text-center leading-tight">Cooking Oil<br>& Ghee</span>
-        </a>
-
-        <a href="#" class="bg-crave-pink rounded-3xl p-6 flex flex-col items-center justify-center aspect-square shadow-sm transform hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
-            <div class="h-20 w-20 mb-4 bg-white rounded-full bg-opacity-30 flex items-center justify-center text-4xl"><ion-icon name="fish-outline" class="text-white"></ion-icon></div>
-            <span class="font-bold text-lg text-white text-center leading-tight">Meat<br>& Fish</span>
-        </a>
-
-        <a href="#" class="bg-crave-lightyellow rounded-3xl p-6 flex flex-col items-center justify-center aspect-square shadow-sm transform hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
-            <div class="h-20 w-20 mb-4 bg-white rounded-full bg-opacity-50 flex items-center justify-center text-4xl"><ion-icon name="pizza-outline" class="text-crave-brown"></ion-icon></div>
-            <span class="font-bold text-lg text-crave-brown text-center leading-tight">Bakery<br>& Snacks</span>
-        </a>
-
-        <a href="#" class="bg-crave-beige rounded-3xl p-6 flex flex-col items-center justify-center aspect-square shadow-sm transform hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
-            <div class="h-20 w-20 mb-4 bg-white rounded-full bg-opacity-50 flex items-center justify-center text-4xl"><ion-icon name="egg-outline" class="text-crave-brown"></ion-icon></div>
-            <span class="font-bold text-lg text-crave-brown text-center leading-tight">Dairy<br>& Eggs</span>
-        </a>
-
-        <a href="#" class="bg-crave-lightpink rounded-3xl p-6 flex flex-col items-center justify-center aspect-square shadow-sm transform hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
-            <div class="h-20 w-20 mb-4 bg-white rounded-full bg-opacity-30 flex items-center justify-center text-4xl"><ion-icon name="cafe-outline" class="text-white"></ion-icon></div>
-            <span class="font-bold text-lg text-white text-center leading-tight">Beverages</span>
+        <a href="#" class="bg-crave-lightpink rounded-3xl p-8 flex flex-col items-center justify-center aspect-square shadow-sm transform hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
+            <div class="h-24 w-24 mb-5 bg-white rounded-full bg-opacity-30 flex items-center justify-center text-5xl"><ion-icon name="cafe-outline" class="text-white"></ion-icon></div>
+            <span class="font-bold text-2xl text-white text-center leading-tight">Minuman</span>
+            <p class="mt-3 text-sm text-white text-center opacity-80">Semua kategori minuman tersedia di sini</p>
         </a>
 
     </div>
