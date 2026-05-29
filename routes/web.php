@@ -117,5 +117,19 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::delete('/reviews/{id}', [\App\Http\Controllers\AdminController::class, 'deleteReview'])->name('reviews.delete');
 });
 
+// Rute khusus untuk menjalankan migrasi di Shared Hosting (InfinityFree)
+Route::get('/run-migrations', function () {
+    try {
+        // PERINGATAN: Rute ini akan mereset database. Hapus rute ini setelah deployment selesai!
+        \Illuminate\Support\Facades\Artisan::call('migrate:fresh', [
+            '--seed' => true,
+            '--force' => true
+        ]);
+        return "Migrasi dan Seeding Database Berhasil! Silakan hapus rute ini di routes/web.php demi keamanan.";
+    } catch (\Exception $e) {
+        return "Gagal melakukan migrasi: " . $e->getMessage();
+    }
+});
+
 // Breeze Auth Routes (Login, Register, etc.)
 require __DIR__ . '/auth.php';
