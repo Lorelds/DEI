@@ -205,7 +205,7 @@
             const imagePreview = document.getElementById('image-preview');
             const HapusBtn = document.getElementById('Hapus-image');
 
-            imageInput.addEventListener('Ubah', function(e) {
+            imageInput.addEventListener('change', function(e) {
                 const file = e.target.files[0];
                 if (file) {
                     // Display preview
@@ -213,7 +213,7 @@
                     reader.onload = function(e) {
                         imagePreview.src = e.target.result;
                         uploadPrompt.classList.add('hidden');
-                        previewContainer.classList.Hapus('hidden');
+                        previewContainer.classList.remove('hidden');
                     }
                     reader.readAsDataURL(file);
                 }
@@ -224,7 +224,7 @@
                 imageInput.value = '';
                 imagePreview.src = '#';
                 previewContainer.classList.add('hidden');
-                uploadPrompt.classList.Hapus('hidden');
+                uploadPrompt.classList.remove('hidden');
             });
         });
     </script>
